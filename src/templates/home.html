@@ -181,11 +181,14 @@
           {% end_dnd_module %}
         {% end_dnd_row %}
         {% dnd_row %}
-          {% dnd_module path='@hubspot/rich_text' %}
-            {% module_attribute 'html' %}
-              <h3>Feature one</h3>
-              <p>Use text and images to tell your company’s story. Explain what makes your product or service extraordinary.</p>
-            {% end_module_attribute %}
+            {% dnd_module path='../modules/Testimonial.module',
+            customer_name = "Mary",
+            profile_pic = {
+              src: "{{ get_asset_url('../images/profile-pic-mary.svg') }}",
+              alt: "Mary Profile Picture"
+            },
+            testimonial = "Wow, what a product! I can't wait to recommend this to all my family and friends!"
+          %}
           {% end_dnd_module %}
         {% end_dnd_row %}
       {% end_dnd_column %}
